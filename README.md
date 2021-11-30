@@ -22,7 +22,7 @@
 
     -Method Put
     -URL localhost:8080/api/superheroes/update
-    -Body "raw" "JSON" {"id":"2" "firstName": "Bruce 2","superHeroName": "Hulk 2","lastName": "Banner"}
+    -Body "raw" "JSON" {"id":"2", "firstName": "Bruce 2","superHeroName": "Hulk 2","lastName": "Banner"}
 6) to create new Super Hero
 
     -Method Post
