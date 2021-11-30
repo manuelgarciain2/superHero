@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class SuperHeroService {
-    private SuperHero superHero;
+
     @Autowired
     private SuperHerorepository superHerorepository;
 
@@ -31,11 +31,11 @@ public class SuperHeroService {
         return superHerorepository.save(superHeroRequest);
     }
 
-    public ApiResponse deleteSuperHero(SuperHero superHeroRequest) {
-        return superHerorepository.findById(superHeroRequest.getId()).map(superhero -> {
-            superHerorepository.delete(superHeroRequest);
+    public ApiResponse deleteSuperHero(Long superHeroRequest) {
+        return superHerorepository.findById(superHeroRequest).map(superhero -> {
+            superHerorepository.delete(superhero);
             return new ApiResponse(true, "Superhero deleted");
-        }).orElseThrow(() -> new ResourceNotFoundException("Superhero", "id", superHeroRequest.getId()));
+        }).orElseThrow(() -> new ResourceNotFoundException("Superhero", "id", superHeroRequest));
 
     }
 
