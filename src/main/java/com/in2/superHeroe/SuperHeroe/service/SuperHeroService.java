@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class SuperHeroService {
-    private SuperHero superHero;
+
     @Autowired
     private SuperHerorepository superHerorepository;
 
